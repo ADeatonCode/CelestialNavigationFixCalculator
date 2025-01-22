@@ -1,0 +1,1 @@
+This project is based on the math in 'Teacup Navigation'.  It will calculate a moving position based on 5 sites.  Once the site is complete it will also give the great circle distance and direction to the destination.
