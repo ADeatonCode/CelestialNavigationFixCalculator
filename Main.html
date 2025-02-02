@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+    <title>Fix Calculator</title>
+</head>
+<body>
+    <h1>Celestial Navigation Position Fix Calculator</h1>
+    <>
+        <div id="settings">
+            <h2>Settings</h2>
+                <form id="settingsForm">
+                    <label for="hEye">Height of Eye:</label>
+                    <input type="text" id="hEye" name="Settings" placeholder="Heye">
+                    <label for="iCor">Instrument Correction:</label>
+                    <input type="text" id="iCor" name="Settings" placeholder="Icor">
+                    <label for="temp">Temperature (c):</label>
+                    <input type="text" id="temp" name="Settings" placeholder="Temp C">
+                    <label for="presure">pressure (mb):</label>
+                    <input type="text" id="pressure" name="Settings" placeholder="1003mb">
+                    <button type="button" id="submitSettings">Submit Settings</button>
+                </form>
+        </div>
+        <hr>
+        <div id="sightingsArea">
+            <h2>Last known Fix</h2>
+            <form class="sightingsForm" id="lastKnowFix">
+                <label for="date">date</label>
+                <input type="text" placeholder="date" >
+                <label for="time">time</label>
+                <input type="text" placeholder="time" >
+                <label for=" latitude">latitude</label>
+                <input type="text" placeholder="latitude">
+                <label fo="longitude">longitude</label>
+                <input type="text" placeholder="longitude">
+                <button type="button" id="submitLastKnowFix">Submit Last Known Fix</button>
+            </form>
+        </div>
+        <hr>
+        <h2>Running Sights</h2><br>
+        <div name="sights" id="sightInput">
+            <form name="sights" class="sight-1">
+                <h3>Sight 1</h3>
+                <label for = "date">Date</label>
+                <input type="text" id="date" name="sights" class="sight-1" placeholder="date" >
+                <label for ="time">Time</label>
+                <input type="text" placeholder="time" >
+                <label for="object">Object</label>
+                <input type="text" placeholder="object">
+                <div name="sights" id="sightExtention">
+                    <p>sight object:</p>
+                    <input type="radio" id="sun" name="objectType" value="sun">
+                    <label for="sun">Sun</label><br>
+                    <input type="radio" id="moon" name="objectType" value="moon">
+                    <label for="moon">moon</label><br>
+                    <input type="radio" id="star" name="objectType" value="star">
+                    <label for="star">star / planet</label>
+                    <input type="checkbox" id="UL" name="objectType">
+                    <label for="UL">Upper Limb</label>
+                </div>
+                <input type="text" placeholder="Hs 0.0000deg">
+                <input type="text" placeholder="notes">
+                <input type="text" placeholder="GHAHour">
+                <input type="text" placeholder="DEC">
+                <input type="text" placeholder="v">
+                <input type="text" placeholder="d">
+                <button type="button" id="UpdateSight1" name="UpdateSight1">Update Sight 1</button>
+            </form>
+            <form name="sights" class="sight-2">
+                <h3>Sight 2</h3>
+                <label for = "date">Date</label>
+                <input type="text" id="date" name="sights" class="sight-2" placeholder="date" >
+                <label for ="time">Time</label>
+                <input type="text" placeholder="time" >
+                <label for="object">Object</label>
+                <input type="text" placeholder="object">
+                <div>
+                    <p>sight object:</p>
+                    <input type="radio" id="sun" name="objectType" value="sun">
+                    <label for="sun">Sun</label><br>
+                    <input type="radio" id="moon" name="objectType" value="moon">
+                    <label for="moon">moon</label><br>
+                    <input type="radio" id="star" name="objectType" value="star">
+                    <label for="star">star / planet</label><br>
+                    <input type="checkbox" id="UL" name="objectType">
+                    <label for="UL">Upper Limb</label>
+                </div>
+                <input type="text" placeholder="Hs 0.0000deg">
+                <input type="text" placeholder="notes">
+                <input type="text" placeholder="GHAHour">
+                <input type="text" placeholder="DEC">
+                <input type="text" placeholder="v">
+                <input type="text" placeholder="d">
+                <button type="button" id="UpdateSight2" name="UpdateSight2">Update Sight 2</button>
+            </form>
+            <form name="sights" class="sight-3">
+                <h3>Sight 3</h3>
+                <label for = "date">Date</label>
+                <input type="text" id="date" name="sights" class="sight-3" placeholder="date" >
+                <label for ="time">Time</label>
+                <input type="text" placeholder="time" >
+                <label for="object">Object</label>
+                <input type="text" placeholder="object">
+                <div>
+                    <p>sight object:</p>
+                    <input type="radio" id="sun" name="objectType" value="sun">
+                    <label for="sun">Sun</label><br>
+                    <input type="radio" id="moon" name="objectType" value="moon">
+                    <label for="moon">moon</label><br>
+                    <input type="radio" id="star" name="objectType" value="star">
+                    <label for="star">star / planet</label><br>
+                    <input type="checkbox" id="UL" name="objectType">
+                    <label for="UL">Upper Limb</label>
+                </div>
+                <input type="text" placeholder="Hs 0.0000deg">
+                <input type="text" placeholder="notes">
+                <input type="text" placeholder="GHAHour">
+                <input type="text" placeholder="DEC">
+                <input type="text" placeholder="v">
+                <input type="text" placeholder="d">
+                <button type="button" id="UpdateSight3" name="UpdateSight3">Update Sight 3</button>
+            </form>
+            <form name="sights" class="sight-4">
+                <h3>Sight 4</h3>
+                <label for = "date">Date</label>
+                <input type="text" id="date" name="sights" class="sight-4" placeholder="date" >
+                <label for ="time">Time</label>
+                <input type="text" placeholder="time" >
+                <label for="object">Object</label>
+                <input type="text" placeholder="object">
+                <div>
+                    <p>sight object:</p>
+                    <input type="radio" id="sun" name="objectType" value="sun">
+                    <label for="sun">Sun</label><br>
+                    <input type="radio" id="moon" name="objectType" value="moon">
+                    <label for="moon">moon</label><br>
+                    <input type="radio" id="star" name="objectType" value="star">
+                    <label for="star">star / planet</label><br>
+                    <input type="checkbox" id="UL" name="objectType">
+                    <label for="UL">Upper Limb</label>
+                </div>
+                <input type="text" placeholder="Hs 0.0000deg">
+                <input type="text" placeholder="notes">
+                <input type="text" placeholder="GHAHour">
+                <input type="text" placeholder="DEC">
+                <input type="text" placeholder="v">
+                <input type="text" placeholder="d">
+                <button type="button" id="UpdateSight4" name="UpdateSight4">Update Sight 4</button>
+            </form>
+            <form name="sights" class="sight-5">
+                <h3>Sight 5</h3>
+                <label for = "date">Date</label>
+                <input type="text" id="date" name="sights" class="sight-5" placeholder="date" >
+                <label for ="time">Time</label>
+                <input type="text" placeholder="time" >
+                <label for="object">Object</label>
+                <input type="text" placeholder="object">
+                <div>
+                    <p>sight object:</p>
+                    <input type="radio" id="sun" name="objectType" value="sun">
+                    <label for="sun">Sun</label><br>
+                    <input type="radio" id="moon" name="objectType" value="moon">
+                    <label for="moon">moon</label><br>
+                    <input type="radio" id="star" name="objectType" value="star">
+                    <label for="star">star / planet</label><br>
+                    <input type="checkbox" id="UL" name="objectType">
+                    <label for="UL">Upper Limb</label>
+                </div>
+                <input type="text" placeholder="Hs 0.0000deg">
+                <input type="text" placeholder="notes">
+                <input type="text" placeholder="GHAHour">
+                <input type="text" placeholder="DEC">
+                <input type="text" placeholder="v">
+                <input type="text" placeholder="d">
+                <button type="button" id="UpdateSight5" name="UpdateSight5">Update Sight 5</button>
+            </form>
+        </div>
+    <hr>
+    <div>
+        <h2>DR Position</h2>
+        <p>results here</p>
+    </div>
+    <hr>
+    <div>
+        <h2>Plot Sheet</h2>
+    </div>
+    <hr>
+    <h4>Disclaimer: The information provided is for practice only and is not intended for actual navigation.  Please use the appropriate tables and procedures for actual navigation.</h4>  
+    <script type="text/javascript" src="./scirpts/scirpts.js"></script>
+
+</body>
+</html>
