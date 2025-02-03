@@ -1,5 +1,19 @@
+body {
+    background: rgb(213, 238, 238);
+}
 h1, h2 {
     text-align: center;
+}
+
+input.text {
+    width: 90%;
+    box-sizing: border-box;
+}
+
+#settingsAndFix {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
 #settingsForm {
@@ -7,9 +21,8 @@ h1, h2 {
     flex-direction: column;
     align-items: flex-start;
     border: solid 1px black;
-    height: 9em;
+    height: 16em;
     width: 20%;
-    
     padding: 1em;
     margin: 1em;
 
@@ -21,9 +34,10 @@ h1, h2 {
     flex-direction: column;
     align-items: flex-start;
     border: solid 1px black;
-    height: 9em;
+    height: 12em;
     width: 20%;
-
+    padding: 1em;
+    margin: 1em;
 
 }
 

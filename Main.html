@@ -8,8 +8,8 @@
 </head>
 <body>
     <h1>Celestial Navigation Position Fix Calculator</h1>
-    <>
-        <div id="settings">
+    
+        <div id="settingsAndFix">
             <h2>Settings</h2>
                 <form id="settingsForm">
                     <label for="hEye">Height of Eye:</label>
@@ -20,11 +20,12 @@
                     <input type="text" id="temp" name="Settings" placeholder="Temp C">
                     <label for="presure">pressure (mb):</label>
                     <input type="text" id="pressure" name="Settings" placeholder="1003mb">
-                    <button type="button" id="submitSettings">Submit Settings</button>
+                    <label for="speed">Speed</label>
+                    <input type="text" id="speed" name="Settings" placeholder="12Kts">
+                    <label for="heading">Heading</label>
+                    <input type = "text" id="heading" name="Settings" placeholder="230deg"> 
+                    <button type="button" id="submitSettings" onClick="settingsUpdate()">Submit Settings</button>
                 </form>
-        </div>
-        <hr>
-        <div id="sightingsArea">
             <h2>Last known Fix</h2>
             <form class="sightingsForm" id="lastKnowFix">
                 <label for="date">date</label>
@@ -35,7 +36,7 @@
                 <input type="text" placeholder="latitude">
                 <label fo="longitude">longitude</label>
                 <input type="text" placeholder="longitude">
-                <button type="button" id="submitLastKnowFix">Submit Last Known Fix</button>
+                <button type="button" id="submitFix" onClick="submitFix()">Submit Fix</button>
             </form>
         </div>
         <hr>
@@ -49,7 +50,7 @@
                 <input type="text" placeholder="time" >
                 <label for="object">Object</label>
                 <input type="text" placeholder="object">
-                <div name="sights" id="sightExtention">
+                <div name="sights" id="sightExtention1">
                     <p>sight object:</p>
                     <input type="radio" id="sun" name="objectType" value="sun">
                     <label for="sun">Sun</label><br>
@@ -57,6 +58,7 @@
                     <label for="moon">moon</label><br>
                     <input type="radio" id="star" name="objectType" value="star">
                     <label for="star">star / planet</label>
+                    <br>
                     <input type="checkbox" id="UL" name="objectType">
                     <label for="UL">Upper Limb</label>
                 </div>
@@ -66,7 +68,9 @@
                 <input type="text" placeholder="DEC">
                 <input type="text" placeholder="v">
                 <input type="text" placeholder="d">
-                <button type="button" id="UpdateSight1" name="UpdateSight1">Update Sight 1</button>
+                <p id="DOffset1">Doff</p>
+                <p id="Azimuth1">Azimuth</p>
+                <button type="button" id="UpdateSight1" name="UpdateSight1" onClick="sight(1)">Update Sight 1</button>
             </form>
             <form name="sights" class="sight-2">
                 <h3>Sight 2</h3>
@@ -76,7 +80,7 @@
                 <input type="text" placeholder="time" >
                 <label for="object">Object</label>
                 <input type="text" placeholder="object">
-                <div>
+                <div name="sights" id="sightExtention2">
                     <p>sight object:</p>
                     <input type="radio" id="sun" name="objectType" value="sun">
                     <label for="sun">Sun</label><br>
@@ -93,7 +97,9 @@
                 <input type="text" placeholder="DEC">
                 <input type="text" placeholder="v">
                 <input type="text" placeholder="d">
-                <button type="button" id="UpdateSight2" name="UpdateSight2">Update Sight 2</button>
+                <p id="DOffset2">Doff</p>
+                <p id="Azimuth2">Azimuth</p>
+                <button type="button" id="UpdateSight2" name="UpdateSight2" onClick = "sight(2)">Update Sight 2</button>
             </form>
             <form name="sights" class="sight-3">
                 <h3>Sight 3</h3>
@@ -120,7 +126,9 @@
                 <input type="text" placeholder="DEC">
                 <input type="text" placeholder="v">
                 <input type="text" placeholder="d">
-                <button type="button" id="UpdateSight3" name="UpdateSight3">Update Sight 3</button>
+                <p id="DOffset3">Doff</p>
+                <p id="Azimuth3">Azimuth</p>                
+                <button type="button" id="UpdateSight3" name="UpdateSight3" onClick="sight(3)">Update Sight 3</button>
             </form>
             <form name="sights" class="sight-4">
                 <h3>Sight 4</h3>
@@ -147,7 +155,9 @@
                 <input type="text" placeholder="DEC">
                 <input type="text" placeholder="v">
                 <input type="text" placeholder="d">
-                <button type="button" id="UpdateSight4" name="UpdateSight4">Update Sight 4</button>
+                <p id="DOffset4">Doff</p>
+                <p id="Azimuth4">Azimuth</p>
+                <button type="button" id="UpdateSight4" name="UpdateSight4" onClick = "sight(5)">Update Sight 4</button>
             </form>
             <form name="sights" class="sight-5">
                 <h3>Sight 5</h3>
@@ -174,6 +184,8 @@
                 <input type="text" placeholder="DEC">
                 <input type="text" placeholder="v">
                 <input type="text" placeholder="d">
+                <p id="DOffset5">Doff</p>
+                <p id="Azimuth5">Azimuth</p>
                 <button type="button" id="UpdateSight5" name="UpdateSight5">Update Sight 5</button>
             </form>
         </div>
@@ -185,10 +197,13 @@
     <hr>
     <div>
         <h2>Plot Sheet</h2>
+        <div class="canvas-container">
+            <canvas id="plotCanvas" width="400" height="400"></canvas>
+        </div>
     </div>
     <hr>
     <h4>Disclaimer: The information provided is for practice only and is not intended for actual navigation.  Please use the appropriate tables and procedures for actual navigation.</h4>  
-    <script type="text/javascript" src="./scirpts/scirpts.js"></script>
+    <script type="text/javascript" src="scirpts/scirpts.js"></script>
 
 </body>
 </html>

@@ -210,5 +210,86 @@ const sightObject = {
     distanceOffset: null
 };
 
+// function readValues() {
+    
+//     var dialOrientation = "";
 
+//     const location = document.getElementById('location').value;
+//     const lat = parseFloat(document.getElementById('lat').value);
+//     const description = document.getElementById('description').value; 
+//     const verticalDial = document.getElementById('verticalDial').checked;
+//     const horizontalDial = document.getElementById('horizontalDial').checked;
+//     const frontView = document.getElementById('frontView').checked;
+//     const backView = document.getElementById('backView').checked;
+//     const alpha = parseFloat(document.getElementById('alpha').value);
+//     const beta = parseFloat(document.getElementById('beta').value);
+//     const tau = parseFloat(document.getElementById('tau').value);
+//     const omega = parseFloat(document.getElementById('omega').value);
+//     const timeInterval = parseFloat(document.getElementById('timeInterval').value);
+//     const dialHeight = parseFloat(document.getElementById('dialHeight').value);
+//     const dialWidth = parseFloat(document.getElementById('dialWidth').value);
 
+//     if (verticalDial === true) {
+//         dialOrientation = "vertical";
+//     } else if (horizontalDial === true) {
+//         dialOrientation = "horizontal";
+//     }
+    
+//     if (frontView === true) {
+//         xSign =1
+//     } else if (backView === true) {
+//         xSign = -1
+//     }
+// }
+
+function settingsUpdate() {
+    navData.HeightOfEye = parseFloat(getValueById('hEye')); 
+    navData.InstrumentCorrection = parseFloat(getValueById('iCor')); 
+    navData.Temperature = parseFloat(getValueById('temp')); 
+    navData.PressureMb = parseFloat(getValueById('pressure'));
+
+    console.log('navData');
+    dRPosition();
+    dRPlot();
+    return;
+}
+
+function submitFix() {
+    navData.dateFix = parseFloat(getValueById('date')); 
+    navData.timeFix = parseFloat(getValueById('time'));
+    navData.latitude = parseFloat(getValueById('latitude'));
+    navData.longitude = parseFloat(getValueById('longitude'));
+
+    console.log('navData');
+    dRPosition();
+    dRPlot();
+    return;
+}
+
+function sight(n) {
+    sightObject.SightDate = getValueByID('sightDate').value;
+    sightObject.SightTime = getValueByID('sightTime').value;
+    sightObject.SightObject = getValueById('sightObject');
+    sightObject.AltitudeSextant = parseFloat(getValueById('altitudeSextant'));
+    sightObject.AltitudeObserved = parseFloat(getValueById('altitudeObserved'));
+    sightObject.Declination = parseFloat(getValueById('declination'));
+    sightObject.d = parseFloat(getValueById('d'));
+    sightObject.GHA = parseFloat(getValueById('gha'));
+    sightObject.v = parseFloat(getValueById('v'));
+    sightObject.Declination = parseFloat(getValueById('declination'));
+    
+    console.log('sightObject');
+    dRPosition();
+    dRPlot();
+    return;
+}
+
+function DRposition() {
+    alert (`<p>hello world</p>`);
+}
+
+function dRPlot() {
+    alert (`<p>hello mighty ocean</p>`);
+}
+
+console.log('hello world');
